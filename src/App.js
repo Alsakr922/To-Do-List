@@ -1,7 +1,6 @@
 "use client"
-import Button from './Button';
 import { useRef, useState } from 'react';
-import { HiCheck, HiEye, HiX } from 'react-icons/hi';
+import { HiCheck, HiEye, HiPlus, HiX, } from 'react-icons/hi';
 import "./App.css"
 
 
@@ -28,13 +27,13 @@ const App = () => {
     <div className='p-[200px] m-auto text-center w-[800px] '>
       <h1 className='regular-64'>To <span className=' text-lime-500 '>Do</span> List</h1>
       <input ref={inputRef} type="text" className='py-2 px-5 rounded-2xl w-full my-5 text-gray-90  outline-none bg-white transition-all border focus:bg-lime-300 focus:border-lime-500' placeholder="Your Next Task ......" />
-      <Button
-        title={"Click"}
-        type={"submit"}
-        classes='py-2 px-7 text-gray-50'
-        theme={"btn_lime_outline"}
-        onclick={add}
-        />
+      <button onClick={add} 
+              className='flexCenter gap-3 rounded-full border py-2 px-7 text-gray-50 btn_lime_outline'
+              type="submit"
+    >
+      {<HiPlus />}
+      <label className="bold-16 whitespace-nowrap cursor-pointer">Add Mission</label>
+    </button>
         <ul className='border border-gray-50 my-10'>
           {
             X.map((item, index) => {
